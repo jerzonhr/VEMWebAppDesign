@@ -1,0 +1,52 @@
+@page "/"
+@page "/master_view"
+
+<div class="column-layout master-view-container">
+    <IgbNavbar class="navbar" master_view-scope>
+        <div class="row-layout group">
+            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" master_view-scope>
+                <span class="material-icons icon">
+                    directions_boat
+                </span>
+            </IgbAvatar>
+            <IgbButton Variant="ButtonVariant.Flat" DisplayType="ButtonBaseType.Button" class="button button_2" master_view-scope>
+                CMC
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+        </div>
+    </IgbNavbar>
+    <EditForm class="column-layout login-form">
+        <h5 class="h5">
+            Login
+        </h5>
+        <IgbInput Placeholder="Username" Required Outlined="true" class="input" master_view-scope>
+            <span slot="prefix">
+                <span class="material-icons icon_1">
+                    person
+                </span>
+            </span>
+        </IgbInput>
+        <IgbInput DisplayType="InputType.Password" Placeholder="Password" Required Outlined="true" class="input_1" master_view-scope>
+            <span slot="prefix">
+                <span class="material-icons icon_1">
+                    lock
+                </span>
+            </span>
+            <span slot="suffix">
+                <span class="material-icons icon_1">
+                    visibility
+                </span>
+            </span>
+        </IgbInput>
+        <a class="typography__body-2 hyperlink">
+            Forgot password
+        </a>
+        <IgbButton DisplayType="ButtonBaseType.Button" class="button_1 button_1_1" master_view-scope>
+            Log in
+            <IgbRipple></IgbRipple>
+        </IgbButton>
+    </EditForm>
+</div>
+
+@code {
+}
