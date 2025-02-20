@@ -5,18 +5,40 @@
 .master-view-container {
     justify-content: flex-start;
     align-items: stretch;
-    align-content: flex-start;
+    align-content: stretch;
     height: 100%;
+}
+.group {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
+    min-width: 50px;
+    min-height: 50px;
+    flex-shrink: 0;
 }
 .row-layout {
     display: flex;
 }
-.group {
+.group_1 {
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
     gap: 1rem;
     overflow: hidden;
+}
+.group_2 {
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    position: relative;
+    width: 1440px;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 1440px;
+    align-self: center;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 .navbar {
     color: var(--ig-gray-400);
@@ -63,21 +85,15 @@
     flex-shrink: 0;
 }
 .login-form {
-    z-index: 1;
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     gap: 16px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    position: fixed;
+    position: relative;
     padding: 24px;
-    width: 400px;
     height: 500px;
     min-width: 100px;
     min-height: 50px;
-    max-width: 400px;
     max-height: 500px;
     align-self: center;
 }
