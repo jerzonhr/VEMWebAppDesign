@@ -1,3 +1,4 @@
+@using VEMWebAppDesign.Models
 @page "/"
 @page "/master_view"
 
@@ -18,18 +19,18 @@
         </IgbNavbar>
     </div>
     <div class="row-layout group_2">
-        <EditForm class="column-layout login-form">
+        <EditForm Model="@user" OnSubmit="Login" class="column-layout login-form">
             <h5 class="h5">
                 Login
             </h5>
-            <IgbInput Placeholder="Username" Required Outlined="true" class="input" master_view-scope>
+            <IgbInput @bind-Value="user.Username" Placeholder="Username" Required Outlined="true" class="input" master_view-scope>
                 <span slot="prefix">
                     <span class="material-icons icon_1">
                         person
                     </span>
                 </span>
             </IgbInput>
-            <IgbInput DisplayType="InputType.Password" Placeholder="Password" Required Outlined="true" class="input_1" master_view-scope>
+            <IgbInput @bind-Value="user.Password" DisplayType="InputType.Password" Placeholder="Password" Required Outlined="true" class="input_1" master_view-scope>
                 <span slot="prefix">
                     <span class="material-icons icon_1">
                         lock
@@ -44,7 +45,7 @@
             <a class="typography__body-2 hyperlink">
                 Forgot password
             </a>
-            <IgbButton DisplayType="ButtonBaseType.Button" class="button_1 button_1_1" master_view-scope>
+            <IgbButton DisplayType="ButtonBaseType.Submit" class="button_1 button_1_1" master_view-scope>
                 Log in
                 <IgbRipple></IgbRipple>
             </IgbButton>
@@ -53,4 +54,10 @@
 </div>
 
 @code {
+    [SupplyParameterFromForm] private User user { get; set; } = new User();
+
+    public void Login()
+    {
+        Console.WriteLine("User: " + user.Username + " Logged in");
+    }
 }
